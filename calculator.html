@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Calculator</title>
+
+    <script>
+        function dis(val) {
+            document.getElementById("ans").value += val
+        }
+
+        function calculate() {
+            var inp = document.getElementById("ans").value;
+            var fir = inp[0];
+            var fir = parseInt(fir);
+            var op = inp[1];
+            var sec = inp[2];
+            var sec = parseInt(sec);
+
+            if (op == "+") {
+                var sum = fir + sec;
+
+            }
+            if (op == "-") {
+                var sum = fir - sec;
+
+            }
+            if (op == "*") {
+                var sum = fir * sec;
+
+            }
+            if (op == "/") {
+                var sum = fir / sec;
+
+            }
+            document.getElementById("ans").value = sum;
+
+        }
+
+        function clr() {
+            document.getElementById("ans").value = ""
+        }
+
+        function back() {
+            var value = document.getElementById("ans").value;
+            document.getElementById("ans").value = value.substr(0, value.length - 1);
+        }
+    </script>
+
+</head>
+
+<body>
+    <div align="center" class="display">
+        <h2>Simple Calculator</h2><br>
+        <br>
+        <form action="" name="myform" onsubmit="calculate();">
+            <input type="text" id="ans"><br>
+            <br>
+
+            <div class="buttons">
+                <input type="button" value="1" onclick="dis('1')" />
+                <input type="button" value="2" onclick="dis('2')" />
+                <input type="button" value="3" onclick="dis('3')" />
+                <input type="button" value="Clear" onclick="clr()" /><br>
+                <br>
+
+                <input type="button" value="4" onclick="dis('4')" />
+                <input type="button" value="5" onclick="dis('5')" />
+                <input type="button" value="6" onclick="dis('6')" />
+                <input type="button" value="=" onclick="calculate()" /><br>
+                <br>
+
+                <input type="button" value="7" onclick="dis('7')" />
+                <input type="button" value="8" onclick="dis('8')" />
+                <input type="button" value="9" onclick="dis('9')" />
+                <input type="button" value="+" onclick="dis('+')" /><br>
+                <br>
+
+                <input type="button" value="0" onclick="dis('0')" />
+                <input type="button" value="-" onclick="dis('-')" />
+                <input type="button" value="*" onclick="dis('*')" />
+                <input type="button" value="/" onclick="dis('/')" />
+
+                <input type="button" value="Back" onclick="back()" />
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
